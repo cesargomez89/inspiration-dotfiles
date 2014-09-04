@@ -31,15 +31,9 @@ run_brew() {
             'phantomjs'
             'tree'
             'wget'
-            'qt'
             'ssh-copy-id'
-            'redis'
-            'sqlite'
             'tmux'
             'tmate'
-            'v8'
-            'postgresql'
-            'mongodb'
         )
 
         for index in ${!desired_formulae[*]}
