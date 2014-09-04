@@ -17,3 +17,14 @@ set show-all-if-ambiguous on
 # through commands (i.e. more intelligent Up/Down-arrow behavior)
 "\e[B": history-search-forward
 "\e[A": history-search-backward
+
+#Move between words (ctrl+shift arrow)
+
+# terminal support
+"\e[5D":backward-word
+"\e[5C":forward-word
+
+# iTerm2 support
+"\e[1;6D": backward-word
+"\e[1;6C": forward-word
+
