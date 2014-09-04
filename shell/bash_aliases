@@ -13,12 +13,13 @@ alias -- -="cd -"
 alias c="clear"
 
 #rake db
-alias rdbc="rake db:create"
-alias rdbd="rake db:drop"
-alias rdbm="rake db:migrate"
-alias rdbmr="rake db:migrate:reset"
+alias dbc="rake db:create"
+alias dbd="rake db:drop"
+alias dbm="rake db:migrate"
+alias dbmr="rake db:migrate:reset"
 
-# jump alias
+# ruby gems aliases
+alias r='rails'
 alias j='jump'
 
 # List dir contents aliases
