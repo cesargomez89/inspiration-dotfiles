@@ -22,11 +22,11 @@ load_dotfiles() {
         $HOME/.dotfiles/shell/bash_options # Options
         $HOME/.dotfiles/shell/bash_exports # Exports
         $HOME/.dotfiles/shell/bash_aliases # Bash Aliases
-        $HOME/.dotfiles/shell/git_aliases # Git Aliases
         $HOME/.dotfiles/shell/functions/* # Functions
         $HOME/.dotfiles/shell/bash_prompt # Custom bash prompt
         $HOME/.dotfiles/shell/bash_paths # Path modifications
         $(brew --prefix)/etc/bash_completion # Bash completion (installed via Homebrew)
+        $HOME/.dotfiles/shell/git_aliases # Git Aliases
         $HOME/.bash_profile.local # Local and private settings not under version control (e.g. git credentials)
     )
 

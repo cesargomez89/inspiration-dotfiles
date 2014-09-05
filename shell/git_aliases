@@ -1,5 +1,6 @@
 #!/bin/bash
-source $HOME/.dotfiles/shell/functions/bash_git_completion
+
+source ~/.dotfiles/shell/bash_git_completion
 
 alias g='git'
 alias gs='git status'
