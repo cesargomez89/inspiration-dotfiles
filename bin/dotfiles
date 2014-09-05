@@ -13,7 +13,7 @@ if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
     # Extract to the dotfiles directory
     tar -zxf ${HOME}/inspiration-dotfiles.tar.gz --strip-components 1 -C ${DOTFILES_DIRECTORY}
     # Remove the tarball
-    #rm -rf ${HOME}/inspiration-dotfiles.tar.gz
+    rm -rf ${HOME}/inspiration-dotfiles.tar.gz
 fi
 
 cd ${DOTFILES_DIRECTORY}
