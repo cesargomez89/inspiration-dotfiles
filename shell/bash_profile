@@ -17,7 +17,6 @@ fi
 
 load_dotfiles() {
     declare -a files=(
-        $HOME/.nvm/nvm.sh # This loads NVM
         $HOME/.dotfiles/shell/bash_options # Options
         $HOME/.dotfiles/shell/bash_exports # Exports
         $HOME/.dotfiles/shell/bash_aliases # Bash Aliases
@@ -26,6 +25,7 @@ load_dotfiles() {
         $HOME/.dotfiles/shell/bash_paths # Path modifications
         $(brew --prefix)/etc/bash_completion # Bash completion (installed via Homebrew)
         $HOME/.dotfiles/shell/git_aliases # Git Aliases
+        $HOME/.nvm/nvm.sh # This loads NVM
         $HOME/.rvm/scripts/rvm # Load RVM into a shell session *as a function*
         $HOME/.bash_profile.local # Local and private settings not under version control (e.g. git credentials)
     )
