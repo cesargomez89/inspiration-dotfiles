@@ -1,4 +1,4 @@
-set-option -g default-shell "/bin/bash -i"
+set-option -g default-shell "/bin/bash"
 
 # Ring the bell if any background window rang a bell
 
@@ -72,4 +72,4 @@ bind C-a last-window
 set -g history-limit 10000
 
 # Local config
-#if-shell "[ -f ~/.tmux.conf.user ]" 'source ~/.tmux.conf.user'
+if-shell "[ -f ~/.tmux.conf.user ]" 'source ~/.tmux.conf.user'
