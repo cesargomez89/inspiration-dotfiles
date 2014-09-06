@@ -2,7 +2,9 @@
 
 # bash_paths
 
-echo $PATH
+#hotfix PATH on tmux source
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # Directories to be prepended to PATH
 declare -a dirs_to_prepend=(
     "/usr/local/bin" # Ensure that this bin always takes precedence over `/usr/bin`
