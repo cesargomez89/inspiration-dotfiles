@@ -147,7 +147,7 @@ Further details are in the `bash_prompt` file.
 
 Screenshot:
 
-<!--![](http://i.imgur.com/DSJ1G.png)-->
+![Alt text](/screenshots/tmux-dotfiles.png)
 
 ### Local/private Bash configuration
 
