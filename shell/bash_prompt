@@ -30,12 +30,12 @@ prompt_git() {
 
             # check for unstaged changes
             if ! $(git diff-files --quiet --ignore-submodules --); then
-                s="⚡ ";
+                s="✘ ";
             fi
 
             # check for untracked files
             if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-                s="✙  ";
+                s="$s✙  ";
             fi
 
             # check for stashed files
@@ -127,7 +127,7 @@ set_prompts() {
     # set the terminal title to the current working directory
     PS1="\[\033[47;30m\]⮀"
 
-    PS1+="\[$userStyle\] {{\u}} " # username
+    PS1+="\[$userStyle\]\u " # username
     PS1+="\[$reset$white\] ➤ "
     PS1+="\[$hostStyle\] \$(localip)" # host
     PS1+="\[$reset$white\] ⟫⟫ "
