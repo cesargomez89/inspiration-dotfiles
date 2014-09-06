@@ -33,6 +33,7 @@ run_brew() {
             'wget'
             'ssh-copy-id'
             'tmux'
+            'reattach-to-user-namespace'
             'tmate'
         )
 
