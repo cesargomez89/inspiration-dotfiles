@@ -7,7 +7,7 @@ My OS X dotfiles.
 
 The installation step requires the [XCode Command Line
 Tools](https://developer.apple.com/downloads) and may overwrite existing
-dotfiles in your HOME and `.vim` directories.
+dotfiles in your HOME and `.dotfiles, .vim` directories.
 
 ```bash
 $ bash -c "$(curl -fsSL raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles)"
@@ -69,12 +69,15 @@ Homebrew formulae:
 * [graphicsmagick](http://www.graphicsmagick.org/)
 * [jpeg](https://en.wikipedia.org/wiki/Libjpeg)
 * [macvim](http://code.google.com/p/macvim/)
-* [node](http://nodejs.org/)
 * [optipng](http://optipng.sourceforge.net/)
 * [phantomjs](http://phantomjs.org/)
 * [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
 * [tree](http://mama.indstate.edu/users/ice/tree/)
 * [wget](http://www.gnu.org/software/wget/)
+* [ssh-copy-id]
+* [tmux](http://tmux.sourceforge.net/)
+* [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
+* [tmate](http://tmate.io)
 
 Node packages:
 
