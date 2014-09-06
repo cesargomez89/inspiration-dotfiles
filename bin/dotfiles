@@ -121,7 +121,9 @@ mirrorfiles() {
     link "shell/bash_profile" ".bash_profile"
     link "shell/curlrc"       ".curlrc"
     link "shell/inputrc"      ".inputrc"
+    link "shell/tmux_conf"    ".tmux.conf"
     link "git/gitattributes"  ".gitattributes"
+    link "git/gitignore"      ".gitignore"
     link "git/gitignore"      ".gitignore"
 
     e_success "Dotfiles update complete!"
