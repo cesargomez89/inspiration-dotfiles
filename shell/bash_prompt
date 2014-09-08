@@ -35,12 +35,12 @@ prompt_git() {
 
             # check for untracked files
             if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-                s="$s✙  ";
+                s="$s!✙ ";
             fi
 
             # check for stashed files
             if $(git rev-parse --verify refs/stash &>/dev/null); then
-                s="$s ◉ ";
+                s="$s!◉ ";
             fi
 
         fi
