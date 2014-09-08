@@ -131,11 +131,11 @@ following way:
         <td>Unstaged changes</td>
     </tr>
     <tr>
-        <td><code>✙</code></td>
+        <td><code>!✙</code></td>
         <td>Untracked files</td>
     </tr>
     <tr>
-        <td><code>◉</code></td>
+        <td><code>!◉</code></td>
         <td>Stashed files</td>
     </tr>
 </table>
