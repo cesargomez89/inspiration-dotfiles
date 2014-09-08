@@ -7,7 +7,7 @@ My OS X dotfiles.
 
 The installation step requires the [XCode Command Line
 Tools](https://developer.apple.com/downloads) and may overwrite existing
-dotfiles in your HOME and `.vim` directories.
+dotfiles in your HOME and `.dotfiles, .vim` directories.
 
 ```bash
 $ bash -c "$(curl -fsSL raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles)"
@@ -69,12 +69,15 @@ Homebrew formulae:
 * [graphicsmagick](http://www.graphicsmagick.org/)
 * [jpeg](https://en.wikipedia.org/wiki/Libjpeg)
 * [macvim](http://code.google.com/p/macvim/)
-* [node](http://nodejs.org/)
 * [optipng](http://optipng.sourceforge.net/)
 * [phantomjs](http://phantomjs.org/)
 * [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
 * [tree](http://mama.indstate.edu/users/ice/tree/)
 * [wget](http://www.gnu.org/software/wget/)
+* [ssh-copy-id]
+* [tmux](http://tmux.sourceforge.net/)
+* [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
+* [tmate](http://tmate.io)
 
 Node packages:
 
@@ -111,10 +114,7 @@ drive](http://nicolasgallagher.com/mac-osx-bootable-backup-drive-with-rsync/).
 
 ### Custom bash prompt
 
-I use a custom bash prompt based on the Solarized color palette and influenced
-by @gf3's and @cowboy's custom prompts. For best results, you should install
-iTerm2 and import [Solarized
-Dark.itermcolors](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized).
+Iterm theme [Monokai Soda](https://github.com/mbadolato/iTerm2-Color-Schemes#monokai-soda)
 
 When your current working directory is a Git repository, the prompt will
 display the checked-out branch's name (and failing that, the commit SHA that
@@ -123,19 +123,19 @@ following way:
 
 <table>
     <tr>
-        <td><code>+</code></td>
+        <td><code>✔︎</code></td>
         <td>Uncommitted changes in the index</td>
     </tr>
     <tr>
-        <td><code>!</code></td>
+        <td><code>✘</code></td>
         <td>Unstaged changes</td>
     </tr>
     <tr>
-        <td><code>?</code></td>
+        <td><code>✙</code></td>
         <td>Untracked files</td>
     </tr>
     <tr>
-        <td><code>$</code></td>
+        <td><code>◉</code></td>
         <td>Stashed files</td>
     </tr>
 </table>
@@ -144,7 +144,7 @@ Further details are in the `bash_prompt` file.
 
 Screenshot:
 
-<!--![](http://i.imgur.com/DSJ1G.png)-->
+![Alt text](/screenshots/tmux-dotfiles.png)
 
 ### Local/private Bash configuration
 
