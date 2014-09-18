@@ -3,7 +3,7 @@
 source ~/.dotfiles/shell/bash_git_completion
 
 alias g='git'
-alias gs='git status'
+alias gst='git status'
 alias gc='git commit'
 alias gca='git commit -a'
 alias ga='git add'
