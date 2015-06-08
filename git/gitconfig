@@ -16,9 +16,9 @@
     /*browse = !bash -c 'git fetch $1 ${2:-HEAD} && git checkout FETCH_HEAD' -*/
 
     # Diff what is staged for the next commit
-    /*diffc = diff --cached*/
+    diffc = diff --cached
     # Diff overview
-    /*diffst = diff --stat*/
+    diffst = diff --stat
 
     # Custom graph log (append any tree-ish)
     graph = log --pretty=nice --date-order --graph
@@ -39,7 +39,22 @@
 
     # Find out who is currently active on the repository
     # Displays committers in descending order of number of commits
-    /*who = shortlog --numbered --summary --email --no-merges --since="3 months"*/
+    who = shortlog --numbered --summary --email --no-merges --since="3 months"
+
+    # You get a lot of merge conflicts and want to quickly solve them using an editor and then add the conflicted files
+    edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim `f`"
+    add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
+
+    # extra aliases
+    co = !git checkout
+    a = !git add
+    c = !git commit
+    d = !git diff --color
+    gr = !git grep --color -n
+    ph = !git push origin HEAD
+    s = !git status
+    mff = !git merge -no-ff
+    m = !git merge
 
 [color]
     # color opts: normal, black, red, green, yellow, blue, magenta, cyan, or white

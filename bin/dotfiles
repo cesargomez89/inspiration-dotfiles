@@ -124,6 +124,7 @@ mirrorfiles() {
     link "shell/tmux_conf"    ".tmux.conf"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
+    link "git/gitconfig"      ".gitconfig"
 
     e_success "Dotfiles update complete!"
 }

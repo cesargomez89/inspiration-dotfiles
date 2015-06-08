@@ -39,6 +39,9 @@ alias catn="cat -n"
 alias v="open -a MacVim"
 alias vi='vim'
 
+# git
+
+alias g='git'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

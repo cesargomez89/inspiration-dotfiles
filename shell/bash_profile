@@ -28,6 +28,7 @@ load_dotfiles() {
         $HOME/.nvm/nvm.sh # This loads NVM
         $HOME/.rvm/scripts/rvm # Load RVM into a shell session *as a function*
         $HOME/.bash_profile.local # Local and private settings not under version control (e.g. git credentials)
+        $HOME/.tmuxinator.bash
     )
 
     # if these files are readable, source them
