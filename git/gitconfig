@@ -9,11 +9,11 @@
     cleanup = !git clean -df && git stash clear
 
     # Add untracked, remove deleted, and show status
-    /*adda = !git add -A && git status*/
+    adda = !git add -A && git status
 
     # Fetch a repository ($1) and checkout its ref ($2) HEAD
     # Use: `git browse https://github.com/cesargomez89/inspiration-dotfiles <commit-ish>`
-    /*browse = !bash -c 'git fetch $1 ${2:-HEAD} && git checkout FETCH_HEAD' -*/
+    browse = !bash -c 'git fetch $1 ${2:-HEAD} && git checkout FETCH_HEAD' -
 
     # Diff what is staged for the next commit
     diffc = diff --cached
@@ -46,15 +46,15 @@
     add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
 
     # extra aliases
-    co = !git checkout
-    a = !git add
-    c = !git commit
-    d = !git diff --color
-    gr = !git grep --color -n
-    ph = !git push origin HEAD
-    s = !git status
-    mff = !git merge -no-ff
-    m = !git merge
+    co = checkout
+    a = add
+    c = commit
+    d = diff --color
+    gr = grep --color -n
+    ph = push origin HEAD
+    s = status
+    mff = merge -no-ff
+    m = merge
 
 [color]
     # color opts: normal, black, red, green, yellow, blue, magenta, cyan, or white
@@ -83,3 +83,6 @@
 
 [push]
     default = simple
+[user]
+	name = Cesar Gomez
+	email = cesargomez89@gmail.com
