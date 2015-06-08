@@ -45,16 +45,8 @@
     edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim `f`"
     add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
 
-    # extra aliases
     co = checkout
-    a = add
-    c = commit
-    d = diff --color
-    gr = grep --color -n
-    ph = push origin HEAD
-    s = status
-    mff = merge -no-ff
-    m = merge
+    b = branch
 
 [color]
     # color opts: normal, black, red, green, yellow, blue, magenta, cyan, or white
@@ -83,6 +75,3 @@
 
 [push]
     default = simple
-[user]
-	name = Cesar Gomez
-	email = cesargomez89@gmail.com
