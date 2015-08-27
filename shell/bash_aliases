@@ -61,6 +61,12 @@ alias hidedotfiles="defaults write com.apple.finder AppleShowAllFiles -bool fals
 alias showdeskicons="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 
+#tmux
+alias tml="tmux list-sessions"
+alias tma="tmux -2 attach -t $1"
+alias tmk="tmux kill-session -t $1"
+
+
 #functions
 function feature() {
   story_title=$1
@@ -76,4 +82,9 @@ function hotfix() {
   story_title=${story_title//[.,]/}
 
   git checkout -b hotfix/$story_title
+}
+
+function die() {
+  process=$1
+  ps -ef | grep $process | grep -v "grep" | awk '{print $2}'| xargs kill;
 }
