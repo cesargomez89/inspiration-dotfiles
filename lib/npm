@@ -16,8 +16,7 @@ run_npm() {
     else
         printf "\n"
         e_error "Error: npm not found."
-        printf "Aborting...\n"
-        exit
+        ruby -e "$(curl -L https://www.npmjs.com/install.sh | sh)"
     fi
 
 }
