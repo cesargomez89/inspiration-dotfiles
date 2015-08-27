@@ -35,6 +35,9 @@ run_brew() {
             'tmux'
             'reattach-to-user-namespace'
             'tmate'
+            'v8'
+            'wkhtmltopdf'
+            'chromedriver'
         )
 
         for index in ${!desired_formulae[*]}

@@ -13,6 +13,7 @@ alias gd="git diff --color"
 alias gg="git grep --color -n"
 alias ggi="git grep -ni"
 alias gk="gitk 2>/dev/null --all &"
+alias gx="gitx"
 
 complete -o default -o nospace -F _git_branch gb
 complete -o default -o nospace -F _git_checkout gco
