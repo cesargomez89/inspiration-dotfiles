@@ -2,21 +2,21 @@
 
 run_npm() {
 
-    # Check for npm
-    if type_exists 'npm'; then
-        e_header "Installing Node.js packages..."
+  # Check for npm
+  if ! type_exists 'npm'; then
+    printf "\n"
+    e_header "npm not found, installing..."
+    ruby -e "$(curl -L https://www.npmjs.com/install.sh | sh)"
+  fi
 
-        # List of npm packages
-        local packages="bower gify grunt grunt-cli jshint karma yo"
+  e_header "Installing Node.js packages..."
 
-        # Install packages globally and quietly
-        npm install $packages --global --quiet
+  # List of npm packages
+  local packages="bower grunt grunt-cli karma yo"
 
-        [[ $? ]] && e_success "Done"
-    else
-        printf "\n"
-        e_error "Error: npm not found."
-        ruby -e "$(curl -L https://www.npmjs.com/install.sh | sh)"
-    fi
+  # Install packages globally and quietly
+  npm install $packages --global --quiet
+
+  [[ $? ]] && e_success "Done"
 
 }

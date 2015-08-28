@@ -55,9 +55,9 @@ type_exists() {
 formula_exists() {
     if $(brew list $1 >/dev/null); then
         printf "%s already installed.\n" "$1"
-        return 0
+        return 1
     fi
 
     e_warning "Missing formula: $1"
-    return 1
+    return 0
 }

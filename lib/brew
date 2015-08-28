@@ -14,6 +14,8 @@ run_brew() {
         brew upgrade
         [[ $? ]] && e_success "Done"
 
+        brew tap nviennot/tmate
+
         e_header "Checking status of desired Homebrew formulae..."
         local list_formulae
         local -a missing_formulae
@@ -21,13 +23,10 @@ run_brew() {
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'git'
             'ack'
+            'the_silver_searcher'
             'bash'
             'bash-completion'
-            'ffmpeg'
-            'graphicsmagick'
-            'jpeg'
             'macvim --override-system-vim'
-            'optipng'
             'phantomjs'
             'tree'
             'wget'
@@ -36,13 +35,13 @@ run_brew() {
             'reattach-to-user-namespace'
             'tmate'
             'v8'
-            'wkhtmltopdf'
             'chromedriver'
+            'qt'
         )
 
         for index in ${!desired_formulae[*]}
         do
-            if ! formula_exists ${desired_formulae[$index]}; then
+            if  formula_exists ${desired_formulae[$index]}; then
                 # Store the name (and options) of every missing formula
                 missing_formulae=("${missing_formulae[@]}" "${desired_formulae[$index]}")
             fi
@@ -54,6 +53,8 @@ run_brew() {
 
             e_header "Installing missing Homebrew formulae..."
             # Install all missing formulae
+
+            e_header $list_formulae
             brew install $list_formulae
 
             [[ $? ]] && e_success "Done"
@@ -61,7 +62,7 @@ run_brew() {
 
         # use latest rsync rather than out-dated OS X rsync
         # install separately from the main formulae list to fix gh-19
-        brew install https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb
+        brew install rsync
 
         # Remove outdated versions from the Cellar
         brew cleanup
