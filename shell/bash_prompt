@@ -3,12 +3,8 @@
 # bash_prompt
 
 # Example:
-# ⮀cesargomez  ➤  192.168.0.105 ⟫⟫ ~/inspiration-dotfiles ⭠ ⮀ master ➜ ✘
+# ⮀ cesargomez   ~/.dotfiles ⭠ ⮀ master
 # $
-
-# iTerm2 prefs: import Solarized theme (disable bright colors for bold text)
-# Color ref: http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-# More tips: http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html
 
 prompt_git() {
     local s=""
@@ -66,12 +62,12 @@ set_prompts() {
     local bold=""
     local cyan=""
     local green=""
-    local orange=""
-    local purple=""
-    local red=""
+    #local orange=""
+    #local purple=""
+    #local red=""
     local reset=""
     local white=""
-    local yellow=""
+    #local yellow=""
 
     local hostStyle=""
     local userStyle=""
@@ -88,11 +84,11 @@ set_prompts() {
         blue=$(tput setaf 33)
         cyan=$(tput setaf 37)
         green=$(tput setaf 64)
-        orange=$(tput setaf 166)
-        purple=$(tput setaf 125)
-        red=$(tput setaf 124)
+        #orange=$(tput setaf 166)
+        #purple=$(tput setaf 125)
+        #red=$(tput setaf 124)
         white=$(tput setaf 15)
-        yellow=$(tput setaf 136)
+        #yellow=$(tput setaf 136)
     else
         bold=""
         reset="\e[0m"
@@ -101,11 +97,11 @@ set_prompts() {
         blue="\e[1;34m"
         cyan="\e[1;36m"
         green="\e[1;32m"
-        orange="\e[1;33m"
-        purple="\e[1;35m"
-        red="\e[1;31m"
+        #orange="\e[1;33m"
+        #purple="\e[1;35m"
+        #red="\e[1;31m"
         white="\e[1;37m"
-        yellow="\e[1;33m"
+        #yellow="\e[1;33m"
     fi
 
     # build the prompt
