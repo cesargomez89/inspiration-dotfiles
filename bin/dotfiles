@@ -103,6 +103,17 @@ else
     run_npm
 fi
 
+#janus vim
+seek_confirmation "Install janus vim distribution? this will override your existing .vimrc"
+
+if is_confirmed; then
+  run_vim_install
+else
+    printf "Skipped Janus vim installation\n"
+fi
+
+
+
 link() {
     # Force create/replace the symlink.
     ln -fs "${DOTFILES_DIRECTORY}/${1}" "${HOME}/${2}"
