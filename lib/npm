@@ -9,7 +9,7 @@ run_npm() {
     ruby -e "$(curl -L https://www.npmjs.com/install.sh | sh)"
   fi
 
-  e_header "Installing Node.js packages..."
+  #e_header "Installing Node.js packages..."
 
   # List of npm packages
   #local packages="bower grunt grunt-cli karma yo"

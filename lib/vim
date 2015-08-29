@@ -24,5 +24,7 @@ run_vim_install() {
     git clone ${plugins[$index]}
   done
 
+  link "./lib/vimrc_before"    ".vimrc.before"
+
   e_success "If you don\t have the vim customizations add them from ~.dotfiles//lib/vimrc_list"
 }
