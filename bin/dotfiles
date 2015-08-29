@@ -105,6 +105,10 @@ else
     run_npm
 fi
 
+#add powerline fonts
+e_header "Installing powerline fonts"
+sh ./fonts/install.sh
+
 
 link() {
     # Force create/replace the symlink.
