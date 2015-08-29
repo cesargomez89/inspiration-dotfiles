@@ -2,6 +2,7 @@
 
 run_vimrc_list() {
 cat <<EOT
+"
 " inspiration dotfiles customizations
 let mapleader=","
 
