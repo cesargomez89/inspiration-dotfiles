@@ -3,6 +3,7 @@
 run_vim_install() {
   if ! [ -d ~/.vim/janus/ ]; then
     ruby -e "$(curl -Lo- https://bit.ly/janus-bootstrap | bash)"
+    run_vimrc_list >> ~/.vimrc
     e_success "Janus vim was successfully installed!"
   else
     e_header "Janus was already installed, installing plugins"
@@ -23,5 +24,5 @@ run_vim_install() {
     git clone ${plugins[$index]}
   done
 
-  run_vimrc_list >> ~/.vimrc
+  e_success "If you don\t have the vim customizations add them from ~.dotfiles//lib/vimrc_list"
 }

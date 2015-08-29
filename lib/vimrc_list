@@ -2,6 +2,7 @@
 
 run_vimrc_list() {
 cat <<EOT
+" inspiration dotfiles customizations
 let mapleader=","
 
 if has('gui_running')
@@ -71,6 +72,6 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
+"
 EOT
 }
