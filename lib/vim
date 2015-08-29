@@ -16,7 +16,6 @@ run_vim_install() {
   'git@github.com:christoomey/vim-tmux-navigator.git'
   'git@github.com:morhetz/gruvbox.git'
   'git@github.com:bling/vim-airline.git'
-  'git@github.com:tpope/vim-surround.git'
   )
 
   for index in ${!plugins[*]}
@@ -24,5 +23,5 @@ run_vim_install() {
     git clone ${plugins[$index]}
   done
 
-  run_vimrc_list
+  run_vimrc_list >> ~/.vimrc
 }

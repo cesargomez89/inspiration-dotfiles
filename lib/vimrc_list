@@ -1,7 +1,6 @@
 #!/bin/bash
 
 run_vimrc_list() {
-  e_header "Add this to your .vimrc inside customizations"
 cat <<EOT
 let mapleader=","
 
