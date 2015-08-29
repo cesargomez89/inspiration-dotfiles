@@ -3,10 +3,10 @@
 run_vim_install() {
   ruby -e "$(curl -Lo- https://bit.ly/janus-bootstrap | bash)"
   e_success "Janus vim was successfully installed!"
-  if [ ! -d "~/.janus/" ]; then
+  if [ ! -d ~/.janus ]; then
     mkdir ~/.janus
   fi
-  cd .janus
+  cd ~/.janus
   local -a plugins=(
   'git@github.com:DavidEGx/ctrlp-smarttabs.git'
   'git@github.com:edkolev/tmuxline.vim.git'
@@ -19,7 +19,7 @@ run_vim_install() {
 
   for index in ${!plugins[*]}
   do
-    git clone ${desired_formulae[$index]}
+    git clone ${plugins[$index]}
   done
 
   run_vimrc_list
