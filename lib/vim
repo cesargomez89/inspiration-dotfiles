@@ -1,11 +1,13 @@
 #!/bin/bash
 
 run_vim_install() {
-  ruby -e "$(curl -Lo- https://bit.ly/janus-bootstrap | bash)"
-  e_success "Janus vim was successfully installed!"
-  if [ ! -d ~/.janus ]; then
-    mkdir ~/.janus
+  if ! [ -d ~/.vim/janus/ ]; then
+    ruby -e "$(curl -Lo- https://bit.ly/janus-bootstrap | bash)"
+    e_success "Janus vim was successfully installed!"
+  else
+    e_header "Janus was already installed, installing plugins"
   fi
+  mkdir -p ~/.janus
   cd ~/.janus
   local -a plugins=(
   'git@github.com:DavidEGx/ctrlp-smarttabs.git'
