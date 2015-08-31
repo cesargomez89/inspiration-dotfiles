@@ -131,6 +131,8 @@ mirrorfiles() {
     link "shell/tmux_conf"    ".tmux.conf"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
+    link "vim/vimrc_before"    ".vimrc.before"
+    link "vim/janus"      ".janus"
 
     e_success "Dotfiles update complete!"
 }
@@ -160,7 +162,7 @@ fi
 seek_confirmation "Install janus vim distribution? this will override your existing .vimrc"
 
 if is_confirmed; then
-  run_vim_install
+  run_janus_vim_install
 else
     printf "Skipped Janus vim installation\n"
 fi

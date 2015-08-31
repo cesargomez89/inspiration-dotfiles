@@ -1,3 +1,24 @@
 [submodule "fonts"]
 	path = fonts
 	url = git@github.com:powerline/fonts.git
+[submodule "vim/janus/ag.vim"]
+	path = vim/janus/ag.vim
+	url = git@github.com:rking/ag.vim.git
+[submodule "vim/janus/ctrlp-smarttabs"]
+	path = vim/janus/ctrlp-smarttabs
+	url = git@github.com:DavidEGx/ctrlp-smarttabs.git
+[submodule "vim/janus/tmuxline.vim"]
+	path = vim/janus/tmuxline.vim
+	url = git@github.com:edkolev/tmuxline.vim.git
+[submodule "vim/janus/vim-nerdtree-tabs"]
+	path = vim/janus/vim-nerdtree-tabs
+	url = git@github.com:jistr/vim-nerdtree-tabs.git
+[submodule "vim/janus/gruvbox"]
+	path = vim/janus/gruvbox
+	url = git@github.com:morhetz/gruvbox.git
+[submodule "vim/janus/vim-airline"]
+	path = vim/janus/vim-airline
+	url = git@github.com:bling/vim-airline.git
+[submodule "vim/janus/vim-tmux-navigator"]
+	path = vim/janus/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator.git
