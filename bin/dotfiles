@@ -116,6 +116,7 @@ link() {
 }
 
 #janus vim
+e_header "Installing Janus vim..."
 run_janus_vim_install
 
 
