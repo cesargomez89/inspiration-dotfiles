@@ -135,8 +135,12 @@ mirrorfiles() {
     link "shell/tmux_conf"    ".tmux.conf"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
-    link "vim/vimrc_before"    ".vimrc.before"
-    link "vim/janus"      ".janus"
+    link "vim/vimrc_before"   ".vimrc.before"
+    link "vim/vimrc_after"   ".vimrc.after"
+
+    cd ${Home}
+    ln -s ${DOTFILES_DIRECTORY}/vim/janus .janus
+    cd ${DOTFILES_DIRECTORY}
 
     e_success "Dotfiles update complete!"
 }
@@ -162,4 +166,4 @@ else
     printf "Skipped OS X settings update.\n"
 fi
 
-printf "#### Done!!"
+e_success "### Done!!!"

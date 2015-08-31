@@ -1,8 +1,6 @@
 " inspiration dotfiles customizations
 let mapleader=","
 
-colo gruvbox
-
 if has('gui_running')
   set guifont=Droid\ Sans\ Mono\ for\ Powerline
 endif
