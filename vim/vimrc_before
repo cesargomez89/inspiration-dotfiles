@@ -1,6 +1,8 @@
 " inspiration dotfiles customizations
 let mapleader=","
 
+colo gruvbox
+
 if has('gui_running')
   set guifont=Droid\ Sans\ Mono\ for\ Powerline
 endif
@@ -8,19 +10,9 @@ endif
 cmap w!! w !sudo tee >/dev/null %
 :imap jj <Esc>
 
-map <F5> :call ToggleBg()<CR>
-
 let g:airline_powerline_fonts = 1
 let g:pencil_higher_contrast_ui = 0   " 0=low (def), 1=high
 let g:airline_theme = 'dark'
-
-function! ToggleBg()
-  if &background == 'dark'
-    set bg=light
-  else
-    set bg=dark
-  endif
-endfunc
 
 nmap <C-i> :CtrlPSmartTabs<CR>
 
