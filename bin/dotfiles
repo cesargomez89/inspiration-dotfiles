@@ -23,8 +23,7 @@ source ./lib/list
 source ./lib/utils
 source ./lib/brew
 source ./lib/npm
-source ./lib/vim
-source ./lib/vimrc_list
+source ./lib/janus_vim
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
