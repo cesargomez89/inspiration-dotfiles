@@ -115,6 +115,10 @@ link() {
     ln -fs "${DOTFILES_DIRECTORY}/${1}" "${HOME}/${2}"
 }
 
+#janus vim
+run_janus_vim_install
+
+
 mirrorfiles() {
     # Copy `.gitconfig`.
     # Any global git commands in `~/.bash_profile.local` will be written to
@@ -156,15 +160,6 @@ if is_confirmed; then
     e_success "OS X settings updated! You may need to restart."
 else
     printf "Skipped OS X settings update.\n"
-fi
-
-#janus vim
-seek_confirmation "Install janus vim distribution? this will override your existing .vimrc"
-
-if is_confirmed; then
-  run_janus_vim_install
-else
-    printf "Skipped Janus vim installation\n"
 fi
 
 printf "#### Done!!"
