@@ -4,7 +4,7 @@ run_list() {
 
 cat <<EOT
 
-OS X dotfiles - Nicolas Gallagher - http://nicolasgallagher.com/
+OS X dotfiles - Cesar Gomez - http://cesargomez.github.io/
 
 Additional software to install
 
@@ -14,8 +14,10 @@ Browsers:
 
 Development:
     Filezilla
-    iTerm 2
     VirtualBox
+
+Gems:
+    tmuxinator
 
 Other:
     Alfred

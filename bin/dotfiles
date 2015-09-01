@@ -166,4 +166,4 @@ else
     printf "Skipped OS X settings update.\n"
 fi
 
-e_success "### Done!!!"
+run_list
