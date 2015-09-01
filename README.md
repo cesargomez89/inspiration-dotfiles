@@ -63,13 +63,10 @@ Homebrew formulae:
 * GNU core utilities
 * [git](http://git-scm.com/)
 * [ack](http://betterthangrep.com/)
+* the silver searcher
 * bash (latest version)
 * [bash-completion](http://bash-completion.alioth.debian.org/)
-* [ffmpeg](http://ffmpeg.org/)
-* [graphicsmagick](http://www.graphicsmagick.org/)
-* [jpeg](https://en.wikipedia.org/wiki/Libjpeg)
 * [macvim](http://code.google.com/p/macvim/)
-* [optipng](http://optipng.sourceforge.net/)
 * [phantomjs](http://phantomjs.org/)
 * [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
 * [tree](http://mama.indstate.edu/users/ice/tree/)
@@ -78,15 +75,10 @@ Homebrew formulae:
 * [tmux](http://tmux.sourceforge.net/)
 * [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
 * [tmate](http://tmate.io)
-
-Node packages:
-
-* [bower](http://bower.io/)
-* [gify](https://github.com/visionmedia/node-gify)
-* [grunt-cli](http://gruntjs.com/)
-* [jshint](http://www.jshint.com/)
-* [karma](http://karma-runner.github.io/)
-* [yo](http://yeoman.io/)
+* nvm
+* v8
+* chromedriver
+* qt
 
 ### Custom OS X defaults
 
