@@ -5,6 +5,8 @@
 alias g='git'
 alias gst='git status'
 alias gc='git commit'
+alias gp='git push'
+alias gr='git rebase'
 alias ga='git add'
 alias gco='git checkout'
 alias gb='git branch'
@@ -20,3 +22,6 @@ __git_complete g _git
 
 alias gco="git checkout"
 __git_complete gco _git_checkout
+
+alias gr="git rebase"
+__git_complete gco _git_rebase

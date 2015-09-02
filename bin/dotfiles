@@ -80,6 +80,7 @@ if ! is_git_repo; then
     git reset --hard FETCH_HEAD
     # Remove any untracked files
     git clean -fd
+    git submodule foreach git pull origin master
 fi
 
 # Conditionally sync with the remote repository
