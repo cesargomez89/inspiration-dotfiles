@@ -11,6 +11,13 @@ cmap w!! w !sudo tee >/dev/null %
 let g:airline_powerline_fonts = 1
 let g:pencil_higher_contrast_ui = 0   " 0=low (def), 1=high
 let g:airline_theme = 'dark'
+"let g:promptline_theme = 'airline'
+"
+function! AirlineInit()
+  "let g:airline_section_a = airline#section#create(['mode', ' '])
+  let g:airline_section_b = airline#section#create_left(['', 'hunks'])
+endfunction
+autocmd VimEnter * call AirlineInit()
 
 nmap <C-i> :CtrlPSmartTabs<CR>
 

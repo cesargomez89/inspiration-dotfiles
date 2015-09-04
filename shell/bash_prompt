@@ -3,7 +3,7 @@
 # bash_prompt
 
 # Example:
-# ⮀ cesargomez   ~/.dotfiles ⭠ ⮀ master
+#  cesargomez   ~/.dotfiles   master ➜ ✘
 # $
 
 prompt_git() {
@@ -26,12 +26,12 @@ prompt_git() {
 
             # check for unstaged changes
             if ! $(git diff-files --quiet --ignore-submodules --); then
-                s="✘ ";
+                s="✘";
             fi
 
             # check for untracked files
             if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-                s="$s!◕ ";
+                s="$s!✚ ";
             fi
 
             # check for stashed files

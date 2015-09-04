@@ -115,7 +115,7 @@ following way:
 
 <table>
     <tr>
-        <td><code>✔︎</code></td>
+        <td><code>✓</code></td>
         <td>Uncommitted changes in the index</td>
     </tr>
     <tr>
@@ -123,11 +123,11 @@ following way:
         <td>Unstaged changes</td>
     </tr>
     <tr>
-        <td><code>!✙</code></td>
+        <td><code>!✚</code></td>
         <td>Untracked files</td>
     </tr>
     <tr>
-        <td><code>!◉</code></td>
+        <td><code>!</code></td>
         <td>Stashed files</td>
     </tr>
 </table>
@@ -136,7 +136,7 @@ Further details are in the `bash_prompt` file.
 
 Screenshot:
 
-![Alt text](/screenshots/tmux-dotfiles.png)
+![Alt text](/screenshots/inspiration-screenshot.png)
 
 ### Local/private Bash configuration
 
