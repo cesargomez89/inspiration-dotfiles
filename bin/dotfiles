@@ -137,7 +137,7 @@ mirrorfiles() {
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
     link "vim/vimrc_before"   ".vimrc.before"
-    link "vim/vimrc_after"   ".vimrc.after"
+    link "vim/vimrc_after"    ".vimrc.after"
 
     cd ${Home}
     ln -s ${DOTFILES_DIRECTORY}/vim/janus .janus

@@ -14,6 +14,7 @@ fi
 # to be sure that commands like `brew` (when installed in a custom location)
 # are already added to the PATH.
 [ -r $HOME/.dotfilesrc ] && source $HOME/.dotfilesrc;
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 
 
 load_dotfiles() {

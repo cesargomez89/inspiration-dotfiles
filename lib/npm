@@ -6,7 +6,7 @@ run_npm() {
   if ! type_exists 'npm'; then
     printf "\n"
     e_header "npm not found, installing..."
-    ruby -e "$(curl -L https://www.npmjs.com/install.sh | sh)"
+    ruby -e "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash)"
   fi
 
   #e_header "Installing Node.js packages..."
