@@ -23,6 +23,7 @@ source ./lib/list
 source ./lib/utils
 source ./lib/brew
 source ./lib/npm
+source ./lib/neovim
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -106,7 +107,7 @@ fi
 
 #add powerline fonts
 e_header "Installing powerline fonts"
-sh ./fonts/install.sh
+sh ./nerd-fonts/install.sh
 
 
 link() {
