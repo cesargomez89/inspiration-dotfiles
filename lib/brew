@@ -15,6 +15,7 @@ run_brew() {
         [[ $? ]] && e_success "Done"
 
         brew tap nviennot/tmate
+				brew tap neovim/neovim
 
         e_header "Checking status of desired Homebrew formulae..."
         local list_formulae
@@ -26,11 +27,12 @@ run_brew() {
             'bash'
             'bash-completion'
             'macvim --override-system-vim'
+						'--HEAD neovim'
             'phantomjs'
             'tree'
             'wget'
             'ssh-copy-id'
-            'tmux'
+            'https://raw.githubusercontent.com/choppsv1/homebrew-term24/master/tmux.rb'
             'reattach-to-user-namespace'
             'tmate'
             'v8'

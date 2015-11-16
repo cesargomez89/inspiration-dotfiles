@@ -23,7 +23,6 @@ source ./lib/list
 source ./lib/utils
 source ./lib/brew
 source ./lib/npm
-source ./lib/janus_vim
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -115,9 +114,9 @@ link() {
     ln -fs "${DOTFILES_DIRECTORY}/${1}" "${HOME}/${2}"
 }
 
-#janus vim
-e_header "Installing Janus vim..."
-run_janus_vim_install
+#Neovim
+e_header "Installing neovim dotfiles..."
+run_neovim_install
 
 
 mirrorfiles() {
@@ -136,14 +135,6 @@ mirrorfiles() {
     link "shell/tmux_conf"    ".tmux.conf"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
-    link "vim/vimrc_before"   ".vimrc.before"
-    link "vim/vimrc_after"    ".vimrc.after"
-
-    cd ${Home}
-    ln -s ${DOTFILES_DIRECTORY}/vim/janus .janus
-    cd ${DOTFILES_DIRECTORY}
-
-    e_success "Dotfiles update complete!"
 }
 
 # Ask before potentially overwriting files

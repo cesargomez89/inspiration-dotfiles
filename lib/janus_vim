@@ -1,12 +1,12 @@
 #!/bin/bash
 
-run_janus_vim_install() {
-  if ! [ -d ~/.vim/janus/ ]; then
-    ruby -e "$(curl -Lo- https://bit.ly/janus-bootstrap | bash)"
-    e_success "Janus vim was successfully installed!"
-  else
-    e_header "Janus was already installed"
-  fi
+run_neovim_install() {
+	#if ! [ -d ~/.vim/ ]; then
+	ruby -e "$(curl -Lo- http://bit.ly/cesar-neovim-dotfiles | bash)"
+	e_success "Neovim config was successfully installed!"
+	#else
+	#e_header "Neovim config was already installed"
+	#fi
 
-  e_success "#### the customizations are in .vimrc.before"
+	#e_success "#### the customizations are in .vimrc"
 }
