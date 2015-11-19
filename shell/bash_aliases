@@ -35,7 +35,7 @@ alias lat="ls -AGFoth"
 alias catn="cat -n"
 
 # Open file in existing MacVim window
-alias v="open -a MacVim"
+alias v="nvim"
 alias vi='vim'
 
 # IP addresses
