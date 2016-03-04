@@ -10,8 +10,8 @@ run_brew() {
         [[ $? ]] && e_success "Done"
 
         e_header "Updating any existing Homebrew formulae..."
-        # Upgrade any already-installed formulae
-        brew upgrade
+        ## Upgrade any already-installed formulae
+        #brew upgrade
         [[ $? ]] && e_success "Done"
 
         brew tap nviennot/tmate
@@ -28,7 +28,6 @@ run_brew() {
             'bash-completion'
             'macvim --override-system-vim --with-lua'
 						'--HEAD neovim'
-            'phantomjs'
             'tree'
             'wget'
             'ssh-copy-id'
@@ -36,6 +35,7 @@ run_brew() {
             'reattach-to-user-namespace'
             'tmate'
             'zsh'
+            'tmux' # I recommend to update the tmux version
         )
 
         for index in ${!desired_formulae[*]}

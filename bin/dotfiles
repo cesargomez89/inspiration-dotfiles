@@ -1,5 +1,3 @@
-#!/bin/bash
-
 DOTFILES_DIRECTORY="${HOME}/.dotfiles"
 DOTFILES_TARBALL_PATH="https://github.com/cesargomez89/inspiration-dotfiles/tarball/master"
 DOTFILES_GIT_REMOTE="git@github.com:cesargomez89/inspiration-dotfiles.git"
@@ -24,6 +22,7 @@ source ./lib/utils
 source ./lib/brew
 source ./lib/npm
 source ./lib/neovim
+source ./lib/prezto
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -115,6 +114,9 @@ link() {
     ln -fs "${DOTFILES_DIRECTORY}/${1}" "${HOME}/${2}"
 }
 
+e_header "Installing prezto..."
+run_prezto_install
+
 #Neovim
 e_header "Installing neovim dotfiles..."
 run_neovim_install
@@ -129,25 +131,13 @@ mirrorfiles() {
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory. The `bash_profile` sources other files directly from the
     # `.dotfiles` repository.
-    link "shell/bashrc"       ".bashrc"
-    link "shell/bash_profile" ".bash_profile"
     link "shell/curlrc"       ".curlrc"
-    link "shell/inputrc"      ".inputrc"
+    link "shell/zpreztorc"    ".zpreztorc"
+    link "shell/zshrc"        ".zshrc"
     link "shell/tmux_conf"    ".tmux.conf"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
 }
-
-# Ask before potentially overwriting files
-seek_confirmation "Warning: This step may overwrite your existing dotfiles."
-
-if is_confirmed; then
-    mirrorfiles
-    source ${HOME}/.bash_profile
-else
-    printf "Aborting...\n"
-    exit 1
-fi
 
 # Ask before potentially overwriting OS X defaults
 seek_confirmation "Warning: This step may modify your OS X system defaults."

@@ -3,7 +3,7 @@
 # bash_config
 
 # Make vim the default editor
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # Ignore duplicate commands in the history
 export HISTCONTROL=ignoredups

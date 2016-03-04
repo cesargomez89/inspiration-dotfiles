@@ -18,10 +18,10 @@ alias gk="gitk 2>/dev/null --all &"
 alias gx="gitx"
 
 alias g="git"
-__git_complete g _git
+#__git_complete g _git
 
 alias gco="git checkout"
-__git_complete gco _git_checkout
+#__git_complete gco _git_checkout
 
 alias gr="git rebase"
-__git_complete gco _git_rebase
+#__git_complete gco _git_rebase

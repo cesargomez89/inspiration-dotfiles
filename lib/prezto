@@ -1,0 +1,14 @@
+#!/bin/bash
+
+run_prezto_install() {
+  if ! [ -d ~/.zprezto/ ]; then
+    ruby -e "$(
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    )"
+    e_success "Prezto was successfully installed!"
+  else
+    e_header "Prezto is already installed"
+  fi
+
+  e_success "#### the customizations are in .zpreztorc"
+}
