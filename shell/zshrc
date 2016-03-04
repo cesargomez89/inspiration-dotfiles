@@ -10,4 +10,5 @@ source $HOME/.dotfiles/shell/shell_exports # Shell Exports
 source $HOME/.dotfiles/git/git_aliases # Git Aliases
 
 if [[ -s "$HOME/.zshrc.local" ]]; then
-source $HOME/.zshrc.local # Customizations
+  source $HOME/.zshrc.local # Customizations
+fi
