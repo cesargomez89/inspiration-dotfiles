@@ -1,5 +1,6 @@
 #bin/bash
 
+alias dotfiles="~/.dotfiles/bin/dotfiles"
 # Allow aliases to be with sudo
 alias sudo="sudo "
 
