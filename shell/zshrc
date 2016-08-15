@@ -3,6 +3,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+#source ~/.zplug/init.zsh
+
+export KEYTIMEOUT=1
+
 source $HOME/.dotfiles/shell/shell_aliases # Shell Aliases
 source $HOME/.dotfiles/shell/shell_exports # Shell Exports
 #source $HOME/.dotfiles/shell/shell_paths   # Shell Paths
@@ -12,3 +16,5 @@ source $HOME/.dotfiles/git/git_aliases # Git Aliases
 if [[ -s "$HOME/.zshrc.local" ]]; then
   source $HOME/.zshrc.local # Customizations
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
