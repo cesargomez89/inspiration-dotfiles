@@ -10,10 +10,6 @@ set -g bell-action any
 bind-key ^D detach-client
 
 # Create splits and vertical splits
-#bind-key v split-window -h
-#bind-key ^V split-window -h
-#bind-key s split-window
-#bind-key ^S split-window
 
 # Pane resize in all four directions using vi bindings.
 # Can use these raw but I map them to shift-ctrl-<h,j,k,l> in iTerm.
@@ -21,12 +17,6 @@ bind-key J resize-pane -D
 bind-key K resize-pane -U
 bind-key H resize-pane -L
 bind-key L resize-pane -R
-
-# Navigate around panes easily using vim-like keybindings
-#bind h select-pane -L
-#bind j select-pane -D
-#bind k select-pane -U
-#bind l select-pane -R
 
 # smart pane switching with awareness of vim splits
 bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-h) || tmux select-pane -L"
@@ -41,8 +31,8 @@ bind C-l send-keys 'C-l'
 setw -g mode-keys vi
 
 # Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy v begin-selection
-bind-key -t vi-copy ^v rectangle-toggle
+bind-key -T copy-mode-vi v send -X begin-selection
+bind-key -T copy-mode-vi ^v rectangle-toggle
 
 # set first window to index 1 (not 0) to map more to the keyboard layout...
 set-option -g base-index 1
