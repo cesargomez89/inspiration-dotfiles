@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # bash_config
 
@@ -29,3 +29,5 @@ export PHANTOMJS_BIN="$(brew --prefix)/bin/phantomjs"
 # Make new shells get the history lines from all previous
 # shells instead of the default "last window closed" history
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+export PATH=${PATH}:$HOME/.dotfiles/shell  # Current spotify song

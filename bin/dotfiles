@@ -131,12 +131,13 @@ mirrorfiles() {
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory. The `bash_profile` sources other files directly from the
     # `.dotfiles` repository.
-    link "shell/curlrc"       ".curlrc"
-    link "shell/zpreztorc"    ".zpreztorc"
-    link "shell/zshrc"        ".zshrc"
-    link "shell/tmux_conf"    ".tmux.conf"
-    link "git/gitattributes"  ".gitattributes"
-    link "git/gitignore"      ".gitignore"
+    link "shell/curlrc"       "${HOME}/.curlrc"
+    link "shell/zpreztorc"    "${HOME}/.zpreztorc"
+    link "shell/antigenrc"    "${HOME}/.antigenrc"
+    link "shell/zshrc"        "${HOME}/.zshrc"
+    link "shell/tmux_conf"    "${HOME}/.tmux.conf"
+    link "git/gitattributes"  "${HOME}/.gitattributes"
+    link "git/gitignore"      "${HOME}/.gitignore"
 }
 
 # Ask before potentially overwriting OS X defaults

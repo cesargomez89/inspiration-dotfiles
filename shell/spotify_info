@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+# Returns the current playing song in Spotify for OSX
+#
+artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
+album=`osascript -e 'tell application "Spotify" to album of current track as string'`;
+track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
+echo "      [ ${track} ]  ${artist}"
