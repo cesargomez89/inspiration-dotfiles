@@ -22,20 +22,21 @@ run_brew() {
         local -a missing_formulae
         local -a desired_formulae=(
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
-            'ack'
-            'the_silver_searcher'
             'bash'
-            'bash-completion'
-            'macvim --override-system-vim --with-lua'
-						'--HEAD neovim'
-            'tree'
-            'wget'
-            'ssh-copy-id'
-            'https://raw.githubusercontent.com/choppsv1/homebrew-term24/master/tmux.rb'
-            'reattach-to-user-namespace'
             'tmate'
             'zsh'
             'tmux' # I recommend to update the tmux version
+            'bash-completion'
+            'the_silver_searcher'
+            '--HEAD universal-ctags/universal-ctags/universal-ctags'
+            'tree'
+            'macvim --override-system-vim --with-lua'
+						'--HEAD neovim'
+            'wget'
+            'ssh-copy-id'
+            #'https://raw.githubusercontent.com/choppsv1/homebrew-term24/master/tmux.rb'
+            'reattach-to-user-namespace'
+            'shpotify'
         )
 
         for index in ${!desired_formulae[*]}

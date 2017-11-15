@@ -1,19 +1,38 @@
-# Dotfiles (Cesar Gomez)
+# Inspiration Dotfiles :fire:
+by: (Cesar Gomez)
 
-My OS X dotfiles.
+compatibility: Mac OS
 
 
-## How to install
-
+### Requirements
 The installation step requires the [XCode Command Line
 Tools](https://developer.apple.com/downloads) and may overwrite existing
 dotfiles in your HOME and `.dotfiles, .vim` directories.
 
+lastest zsh from brew
 ```bash
-$ bash -c "$(curl -fsSL raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles)"
+brew install zsh
+```
+or
+```bash
+brew upgrade zsh
 ```
 
-N.B. If you wish to fork this project and maintain your own dotfiles, you must
+I recommend to use Iterm2 nightly build
+https://www.iterm2.com/nightly/latest
+
+## How to install
+
+Run
+```zsh
+curl -L raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles | zsh
+```
+or
+```bash
+curl -L raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles | bash
+```
+
+If you wish to fork this project and maintain your own dotfiles, you must
 substitute my username for your own in the above command and the 2 variables
 found at the top of the `bin/dotfiles` script.
 
@@ -34,18 +53,41 @@ $ dotfiles
 
 ## Features
 
+### Zsh
+
+* [Prezto :heart:](https://github.com/sorin-ionescu/prezto)
+
+### Tmux
+
+* [Tmux Plugin Mangager :package:](https://github.com/tmux-plugins/tpm)
+* [Tmuxinator :goberserk:](https://github.com/tmuxinator/tmuxinator)
+* [Tmux Resurrect :skull:](https://github.com/tmux-plugins/tmux-resurrect)
+* [Shpotify :green_apple:](https://github.com/hnarayanan/shpotify)
+
+### Neovim
+
+* [Async Plugins installer](https://github.com/junegunn/vim-plug)
+* [fuzzy finder (ctrl+p)](https://github.com/junegunn/fzf)
+* [atags(ctags aync gen)](https://github.com/fntlnz/atags.vim)
+* [async autocomplete](https://github.com/Shougo/deoplete.nvim)
+* [Neomake (detect ruby syntax)](https://github.com/neomake/neomake)
+* nerdtree
+* tmux navigation and navbar
+* multicursor
+
 ### Automatic software installation
 
-Homebrew formulae:
+Homebrew useful tools:
 
 * GNU core utilities
-* [git](http://git-scm.com/)
-* [ack](http://betterthangrep.com/)
-* the silver searcher
 * bash (latest version)
+* [git](http://git-scm.com/)
+* [the silver searcher](https://github.com/ggreer/the_silver_searcher)
+* [ctags](https://github.com/universal-ctags/homebrew-universal-ctags)
+* [zsh](https://sourceforge.net/projects/zsh/files/)
 * [bash-completion](http://bash-completion.alioth.debian.org/)
 * [macvim](http://code.google.com/p/macvim/)
-* [phantomjs](http://phantomjs.org/)
+* [neovim](https://neovim.io/)
 * [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
 * [tree](http://mama.indstate.edu/users/ice/tree/)
 * [wget](http://www.gnu.org/software/wget/)
@@ -53,10 +95,7 @@ Homebrew formulae:
 * [tmux](http://tmux.sourceforge.net/)
 * [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
 * [tmate](http://tmate.io)
-* nvm
-* v8
-* chromedriver
-* qt
+* [Shpotify](https://github.com/hnarayanan/shpotify)
 
 ### Custom OS X defaults
 
@@ -67,13 +106,20 @@ also be applied independently by running the following command:
 $ osxdefaults
 ```
 
-### Custom bash prompt
+### Custom shell prompt
 
-Iterm theme [Monokai Soda](https://github.com/mbadolato/iTerm2-Color-Schemes#monokai-soda)
+Iterm theme:
+[Monokai Soda](https://github.com/mbadolato/iTerm2-Color-Schemes#monokai-soda)
+
+Font:
+[Inconsolata Powerline Nerd Font](/files/inconsolata_nerd_font_complete.otf)
+Remember to set the font in iterm2 profile
+
+Neovim Dotfiles Only: https://github.com/cesargomez89/neovim-dotfiles
 
 Screenshot:
 
-![Alt text](/screenshots/inspiration-screenshot.png)
+![Alt text](/files/screenshot.png)
 
 ### Local/private Bash configuration
 
