@@ -104,11 +104,6 @@ else
     run_npm
 fi
 
-#add powerline fonts
-e_header "Installing powerline fonts"
-sh ./nerd-fonts/install.sh
-
-
 link() {
     # Force create/replace the symlink.
     ln -fs "${DOTFILES_DIRECTORY}/${1}" "${HOME}/${2}"
@@ -131,13 +126,13 @@ mirrorfiles() {
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory. The `bash_profile` sources other files directly from the
     # `.dotfiles` repository.
-    link "shell/curlrc"       "${HOME}/.curlrc"
-    link "shell/zpreztorc"    "${HOME}/.zpreztorc"
-    link "shell/antigenrc"    "${HOME}/.antigenrc"
-    link "shell/zshrc"        "${HOME}/.zshrc"
-    link "shell/tmux_conf"    "${HOME}/.tmux.conf"
-    link "git/gitattributes"  "${HOME}/.gitattributes"
-    link "git/gitignore"      "${HOME}/.gitignore"
+    ln -fs "${DOTFILES_DIRECTORY}/shell/curlrc"       "${HOME}/.curlrc"
+    ln -fs "${DOTFILES_DIRECTORY}/shell/zpreztorc"    "${HOME}/.zpreztorc"
+    ln -fs "${DOTFILES_DIRECTORY}/shell/antigenrc"    "${HOME}/.antigenrc"
+    ln -fs "${DOTFILES_DIRECTORY}/shell/zshrc"        "${HOME}/.zshrc"
+    ln -fs "${DOTFILES_DIRECTORY}/shell/tmux_conf"    "${HOME}/.tmux.conf"
+    ln -fs "${DOTFILES_DIRECTORY}/git/gitattributes"  "${HOME}/.gitattributes"
+    ln -fs "${DOTFILES_DIRECTORY}/git/gitignore"      "${HOME}/.gitignore"
 }
 
 # Ask before potentially overwriting OS X defaults

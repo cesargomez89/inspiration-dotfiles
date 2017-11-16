@@ -14,7 +14,6 @@ run_brew() {
         #brew upgrade
         [[ $? ]] && e_success "Done"
 
-        brew tap nviennot/tmate
 				brew tap neovim/neovim
 
         e_header "Checking status of desired Homebrew formulae..."
