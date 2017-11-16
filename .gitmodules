@@ -1,9 +1,3 @@
-[submodule "iterm-themes"]
-	path = iterm-themes
-	url = git@github.com:cesargomez89/themes.git
 [submodule "iterm2-themes"]
 	path = iterm2-themes
-	url = git@github.com:cesargomez89/themes.git
-[submodule "themes"]
-	path = themes
 	url = git@github.com:cesargomez89/themes.git

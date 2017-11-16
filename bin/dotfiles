@@ -117,23 +117,21 @@ e_header "Installing neovim dotfiles..."
 run_neovim_install
 
 
-mirrorfiles() {
-    # Copy `.gitconfig`.
-    # Any global git commands in `~/.bash_profile.local` will be written to
-    # `.gitconfig`. This prevents them being committed to the repository.
-    rsync -avz --quiet ${DOTFILES_DIRECTORY}/git/gitconfig  ${HOME}/.gitconfig
+# Copy `.gitconfig`.
+# Any global git commands in `~/.bash_profile.local` will be written to
+# `.gitconfig`. This prevents them being committed to the repository.
+rsync -avz --quiet ${DOTFILES_DIRECTORY}/git/gitconfig  ${HOME}/.gitconfig
 
-    # Create the necessary symbolic links between the `.dotfiles` and `HOME`
-    # directory. The `bash_profile` sources other files directly from the
-    # `.dotfiles` repository.
-    ln -fs "${DOTFILES_DIRECTORY}/shell/curlrc"       "${HOME}/.curlrc"
-    ln -fs "${DOTFILES_DIRECTORY}/shell/zpreztorc"    "${HOME}/.zpreztorc"
-    ln -fs "${DOTFILES_DIRECTORY}/shell/antigenrc"    "${HOME}/.antigenrc"
-    ln -fs "${DOTFILES_DIRECTORY}/shell/zshrc"        "${HOME}/.zshrc"
-    ln -fs "${DOTFILES_DIRECTORY}/shell/tmux_conf"    "${HOME}/.tmux.conf"
-    ln -fs "${DOTFILES_DIRECTORY}/git/gitattributes"  "${HOME}/.gitattributes"
-    ln -fs "${DOTFILES_DIRECTORY}/git/gitignore"      "${HOME}/.gitignore"
-}
+# Create the necessary symbolic links between the `.dotfiles` and `HOME`
+# directory. The `bash_profile` sources other files directly from the
+# `.dotfiles` repository.
+ln -fs "${DOTFILES_DIRECTORY}/shell/curlrc"       "${HOME}/.curlrc"
+ln -fs "${DOTFILES_DIRECTORY}/shell/zpreztorc"    "${HOME}/.zpreztorc"
+ln -fs "${DOTFILES_DIRECTORY}/shell/antigenrc"    "${HOME}/.antigenrc"
+ln -fs "${DOTFILES_DIRECTORY}/shell/zshrc"        "${HOME}/.zshrc"
+ln -fs "${DOTFILES_DIRECTORY}/shell/tmux_conf"    "${HOME}/.tmux.conf"
+ln -fs "${DOTFILES_DIRECTORY}/git/gitattributes"  "${HOME}/.gitattributes"
+ln -fs "${DOTFILES_DIRECTORY}/git/gitignore"      "${HOME}/.gitignore"
 
 # Ask before potentially overwriting OS X defaults
 seek_confirmation "Warning: This step may modify your OS X system defaults."

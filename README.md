@@ -24,13 +24,14 @@ https://www.iterm2.com/nightly/latest
 ## How to install
 
 Run
-```zsh
-curl -L raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles | zsh
-```
-or
 ```bash
 curl -L raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles | bash
 ```
+the first time openning neovim you have to use:
+```vim
+:PlugInstall
+```
+to install all the plugins, then reopen nvim.
 
 If you wish to fork this project and maintain your own dotfiles, you must
 substitute my username for your own in the above command and the 2 variables
@@ -50,6 +51,7 @@ Run the dotfiles command:
 ```bash
 $ dotfiles
 ```
+
 
 ## Features
 
@@ -96,6 +98,37 @@ Homebrew useful tools:
 * [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
 * [tmate](http://tmate.io)
 * [Shpotify](https://github.com/hnarayanan/shpotify)
+
+### Shortcuts & Commands
+
+[My own shortcuts and commands](/shell/shell_aliases)
+
+[Zprezto](https://github.com/sorin-ionescu/prezto/tree/master/modules)
+
+Prezto has implemented many shortcuts used by the community. Here are the ones I'm using:
+```
+  autosuggestions
+  environment
+  terminal
+  editor
+  history
+  history-substring-search
+  homebrew
+  directory
+  node
+  osx
+  rails
+  rsync
+  ruby
+  syntax-highlighting
+  spectrum
+  terminal
+  utility
+  completion
+  git
+  tmux
+  prompt
+```
 
 ### Custom OS X defaults
 
