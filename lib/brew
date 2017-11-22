@@ -21,7 +21,6 @@ run_brew() {
         local -a missing_formulae
         local -a desired_formulae=(
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
-            'bash'
             'tmate'
             'zsh'
             'tmux' # I recommend to update the tmux version
@@ -33,7 +32,6 @@ run_brew() {
 						'--HEAD neovim'
             'wget'
             'ssh-copy-id'
-            #'https://raw.githubusercontent.com/choppsv1/homebrew-term24/master/tmux.rb'
             'reattach-to-user-namespace'
             'shpotify'
         )

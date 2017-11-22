@@ -116,6 +116,11 @@ run_prezto_install
 e_header "Installing neovim dotfiles..."
 run_neovim_install
 
+# add tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+#add antigen script
+curl -L git.io/antigen > antigen.zsh
 
 # Copy `.gitconfig`.
 # Any global git commands in `~/.bash_profile.local` will be written to

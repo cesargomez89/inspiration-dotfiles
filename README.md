@@ -9,14 +9,19 @@ The installation step requires the [XCode Command Line
 Tools](https://developer.apple.com/downloads) and may overwrite existing
 dotfiles in your HOME and `.dotfiles, .vim` directories.
 
-lastest zsh from brew
-```bash
-brew install zsh
-```
-or
-```bash
-brew upgrade zsh
-```
+Homebrew
+https://brew.sh/index.html
+
+install zsh
+`brew install zsh`
+
+default shell zsh
+`chsh -s $(which zsh)`
+
+install git
+`brew install git`
+
+ensure you have valid public key and a github user linked.
 
 I recommend to use Iterm2 nightly build
 https://www.iterm2.com/nightly/latest
