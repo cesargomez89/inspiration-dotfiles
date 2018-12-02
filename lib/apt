@@ -1,0 +1,10 @@
+#!/bin/bash
+
+install_packages() {
+  sudo apt install git
+  sudo apt install zsh
+  sudo apt install tmux # I recommend to update the tmux version
+  sudo apt install the_silver_searcher
+  sudo apt install wget
+  sudo apt install neovim
+}

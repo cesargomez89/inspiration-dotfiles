@@ -1,7 +1,7 @@
 # Inspiration Dotfiles :fire:
 by: (Cesar Gomez)
 
-compatibility: Mac OS
+compatibility: Mac OS, Linux
 
 
 ### Requirements
@@ -9,20 +9,12 @@ The installation step requires the [XCode Command Line
 Tools](https://developer.apple.com/downloads) and may overwrite existing
 dotfiles in your HOME and `.dotfiles, .vim` directories.
 
-Homebrew
-https://brew.sh/index.html
-
-install zsh
-`brew install zsh`
-
 default shell zsh
 `chsh -s $(which zsh)`
 
-install git
-`brew install git`
+Ensure you have valid public key linked to your github account.
 
-ensure you have valid public key and a github user linked.
-
+For Mac OS
 I recommend to use Iterm2 nightly build
 https://www.iterm2.com/nightly/latest
 
@@ -32,15 +24,19 @@ Run
 ```bash
 curl -L raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles | bash
 ```
-the first time openning neovim you have to use:
-```vim
-:PlugInstall
-```
-to install all the plugins, then reopen nvim.
 
-If you wish to fork this project and maintain your own dotfiles, you must
-substitute my username for your own in the above command and the 2 variables
-found at the top of the `bin/dotfiles` script.
+### Aafter Install
+
+The first time openning neovim you have to use: `:PlugInstall` to install all the plugins,
+then reopen nvim.
+
+In order to get the font icons working you have to install the respective nerd font. The current font is [Insconsolata Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Inconsolata/complete/Inconsolata%20Nerd%20Font%20Complete.otf).
+After install it, just set the font in your current terminal profile.
+
+The custom tmux binding is `C-a` (Ctrl + a).
+To get all the tmux plugins working run: `C-a U` and type `all` to update all the plugins.
+
+Further information: [TPM](https://github.com/tmux-plugins/tpm)
 
 ## How to update
 
@@ -67,6 +63,13 @@ $ dotfiles
 ### Tmux
 
 * [Tmux Plugin Mangager :package:](https://github.com/tmux-plugins/tpm)
+  * 'tmux-plugins/tpm'
+  * 'tmux-plugins/tmux-sensible'
+  * 'tmux-plugins/tmux-yank'
+  * 'tmux-plugins/tmux-resurrect'
+  * 'tmux-plugins/tmux-continuum'
+  * 'tmux-plugins/tmux-sessionist'
+  * 'tmux-plugins/tmux-pain-control'
 * [Tmuxinator :goberserk:](https://github.com/tmuxinator/tmuxinator)
 * [Tmux Resurrect :skull:](https://github.com/tmux-plugins/tmux-resurrect)
 * [Shpotify :green_apple:](https://github.com/hnarayanan/shpotify)
@@ -90,19 +93,14 @@ Homebrew useful tools:
 * bash (latest version)
 * [git](http://git-scm.com/)
 * [the silver searcher](https://github.com/ggreer/the_silver_searcher)
-* [ctags](https://github.com/universal-ctags/homebrew-universal-ctags)
 * [zsh](https://sourceforge.net/projects/zsh/files/)
-* [bash-completion](http://bash-completion.alioth.debian.org/)
-* [macvim](http://code.google.com/p/macvim/)
 * [neovim](https://neovim.io/)
-* [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
-* [tree](http://mama.indstate.edu/users/ice/tree/)
 * [wget](http://www.gnu.org/software/wget/)
-* [ssh-copy-id]
 * [tmux](http://tmux.sourceforge.net/)
-* [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)
-* [tmate](http://tmate.io)
-* [Shpotify](https://github.com/hnarayanan/shpotify)
+* [Shpotify](https://github.com/hnarayanan/shpotify) (Mac OS)
+* [ctags](https://github.com/universal-ctags/homebrew-universal-ctags) (Mac OS)
+* [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
+* [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) (Mac OS)
 
 ### Shortcuts & Commands
 
@@ -159,8 +157,22 @@ Screenshot:
 
 ![Alt text](/files/screenshot.png)
 
-### Local/private Bash configuration
+### Forking
 
-N.B. Because the `git/gitconfig` file is copied to `~/.gitconfig`, any private
-git configuration specified in `~/.bash_profile.local` will not be committed to
-your dotfiles repository.
+If you wish to fork this project and maintain your own dotfiles, you must
+substitute my username for your own in the above command and the 2 variables
+found at the top of the `bin/dotfiles` script.
+
+```bash
+~/.dotfiles >>> git grep cesargomez
+
+.gitmodules:3:  url = git@github.com:cesargomez89/themes.git
+README.md:25:curl -L raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles | bash
+README.md:148:Neovim Dotfiles Only: https://github.com/cesargomez89/neovim-dotfiles
+bin/dotfiles:2:DOTFILES_TARBALL_PATH="https://github.com/cesargomez89/inspiration-dotfiles/tarball/master"
+bin/dotfiles:3:DOTFILES_GIT_REMOTE="git@github.com:cesargomez89/inspiration-dotfiles.git"
+git/gitconfig:16:    # Use: `git browse https://github.com/cesargomez89/inspiration-dotfiles <commit-ish>`
+lib/help:6:OS X dotfiles - Cesar Gomez - http://cesargomez89.github.io/
+lib/help:16:Documentation can be found at https://github.com/cesargomez89/inspiration-dotfiles/
+lib/list:7:OS X dotfiles - Cesar Gomez - http://cesargomez.github.io/
+```

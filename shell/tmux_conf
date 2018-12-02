@@ -1,3 +1,5 @@
+set -g default-shell /bin/zsh
+
 # Screen like binding
 unbind C-b
 set -g prefix C-a
@@ -31,8 +33,13 @@ bind C-l send-keys 'C-l'
 setw -g mode-keys vi
 
 # Setup 'v' to begin selection as in Vim
-bind-key -T copy-mode-vi v send -X begin-selection
-bind-key -T copy-mode-vi ^v rectangle-toggle
+bind-key -T edit-mode-vi Up send-keys -X history-up
+bind-key -T edit-mode-vi Down send-keys -X history-down
+unbind-key -T copy-mode-vi Space ; bind-key -T copy-mode-vi v send-keys -X begin-selection
+unbind-key -T copy-mode-vi Enter ; bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+unbind-key -T copy-mode-vi C-v   ; bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+unbind-key -T copy-mode-vi [     ; bind-key -T copy-mode-vi [ send-keys -X begin-selection
+unbind-key -T copy-mode-vi ]     ; bind-key -T copy-mode-vi ] send-keys -X copy-selection
 
 # set first window to index 1 (not 0) to map more to the keyboard layout...
 set-option -g base-index 1
@@ -48,6 +55,7 @@ bind M \
   set -g mouse off \;\
   display 'Mouse: OFF'
 
+set -g @resurrect-strategy-nvim 'session'
 set -g @continuum-restore 'on'
 
 # List of plugins
@@ -58,8 +66,6 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-sessionist'
 set -g @plugin 'tmux-plugins/tmux-pain-control'
-
-set -g @resurrect-strategy-nvim 'session'
 
 run '~/.tmux/plugins/tpm/tpm'
 # Local config

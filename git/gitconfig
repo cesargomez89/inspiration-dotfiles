@@ -16,24 +16,6 @@
     # Use: `git browse https://github.com/cesargomez89/inspiration-dotfiles <commit-ish>`
     browse = !bash -c 'git fetch $1 ${2:-HEAD} && git checkout FETCH_HEAD' -
 
-    # Diff what is staged for the next commit
-    diffc = diff --cached
-    # Diff overview
-    diffst = diff --stat
-
-    # Custom graph log (append any tree-ish)
-    graph = log --pretty=nice --date-order --graph
-    # Custom graph log for all branches
-    grapha = log --pretty=nice --date-order --graph --all
-
-    # Custom pretty log
-    logp = log --pretty=nice --date-order
-
-    # Diffstat log
-    logst = log --stat
-    # Short format diffstat log
-    logsf = log --stat --format=oneline --abbrev-commit
-
     # Fetch and checkout a GitHub Pull Request from a remote (defaults to `origin`)
     # Use: `git gh-pr 123` or `git gh-pr 123 upstream`
     gh-pr = !bash -c 'git fetch -fu ${2:-origin} refs/pull/$1/head:gh-pr/$1 && git checkout gh-pr/$1' -
@@ -59,20 +41,13 @@
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
 
-[credential]
-    helper = osxkeychain
-
-[diff]
-    tool = mvimdiff
-
-[difftool]
-    prompt = false
-
 [pretty]
     # tut: http://gitimmersion.com/lab_10.html
     # ref: http://linux.die.net/man/1/git-log
     # Result: <short-sha> <commit-message> (<pointer-names>) -- <commit-author-name>; <relative-time>
     nice = "%C(yellow)%h%C(reset) %C(white)%s%C(cyan)%d%C(reset) -- %an; %ar"
+[credential]
+    helper = credential-osxkeychain
 
 [push]
     default = simple

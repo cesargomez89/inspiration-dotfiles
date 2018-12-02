@@ -19,11 +19,9 @@ cd ${DOTFILES_DIRECTORY}
 source ./lib/help
 source ./lib/list
 source ./lib/utils
-source ./lib/brew
 source ./lib/npm
 source ./lib/neovim
 source ./lib/prezto
-
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     run_help
@@ -46,26 +44,32 @@ do
     esac
 done
 
-# Before relying on Homebrew, check that packages can be compiled
-if ! type_exists 'gcc'; then
-    e_error "The XCode Command Line Tools must be installed first."
-    printf "  Download them from: https://developer.apple.com/downloads\n"
-    printf "  Then run: bash ~/.dotfiles/bin/dotfiles\n"
-    exit 1
-fi
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    source ./lib/brew
 
-# Check for Homebrew
-if ! type_exists 'brew'; then
-    e_header "Installing Homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+	# Before relying on Homebrew, check that packages can be compiled
+	if ! type_exists 'gcc'; then
+	    e_error "The XCode Command Line Tools must be installed first."
+	    printf "  Download them from: https://developer.apple.com/downloads\n"
+	    printf "  Then run: bash ~/.dotfiles/bin/dotfiles\n"
+	    exit 1
+	fi
 
-# Check for git
-if ! type_exists 'git'; then
-    e_header "Updating Homebrew..."
-    brew update
-    e_header "Installing Git..."
-    brew install git
+	# Check for Homebrew
+	if ! type_exists 'brew'; then
+	    e_header "Installing Homebrew..."
+	    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	fi
+
+	# Check for git
+	if ! type_exists 'git'; then
+	    e_header "Updating Homebrew..."
+	    brew update
+	    e_header "Installing Git..."
+	    brew install git
+	fi
+elif [[ "$OSTYPE" == "gnu-linux"* ]]; then
+    source ./lib/apt
 fi
 
 # Initialize the git repository if it's missing
@@ -99,7 +103,7 @@ if [[ $no_packages ]]; then
 else
     printf "Updating packages...\n"
     # Install Homebrew formulae
-    run_brew
+    install_packages
     # Install Node packages
     run_npm
 fi

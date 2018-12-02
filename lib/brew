@@ -1,6 +1,6 @@
 #!/bin/bash
 
-run_brew() {
+install_packages() {
 
     # Check for Homebrew
     if type_exists 'brew'; then
@@ -21,17 +21,13 @@ run_brew() {
         local -a missing_formulae
         local -a desired_formulae=(
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
-            'tmate'
             'zsh'
             'tmux' # I recommend to update the tmux version
-            'bash-completion'
             'the_silver_searcher'
             '--HEAD universal-ctags/universal-ctags/universal-ctags'
             'tree'
-            'macvim --override-system-vim --with-lua'
-						'--HEAD neovim'
+	    '--HEAD neovim'
             'wget'
-            'ssh-copy-id'
             'reattach-to-user-namespace'
             'shpotify'
         )
