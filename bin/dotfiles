@@ -123,9 +123,6 @@ run_neovim_install
 # add tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-#add antigen script
-curl -L git.io/antigen > antigen.zsh
-
 # Copy `.gitconfig`.
 # Any global git commands in `~/.bash_profile.local` will be written to
 # `.gitconfig`. This prevents them being committed to the repository.
@@ -136,7 +133,6 @@ rsync -avz --quiet ${DOTFILES_DIRECTORY}/git/gitconfig  ${HOME}/.gitconfig
 # `.dotfiles` repository.
 ln -fs "${DOTFILES_DIRECTORY}/shell/curlrc"       "${HOME}/.curlrc"
 ln -fs "${DOTFILES_DIRECTORY}/shell/zpreztorc"    "${HOME}/.zpreztorc"
-ln -fs "${DOTFILES_DIRECTORY}/shell/antigenrc"    "${HOME}/.antigenrc"
 ln -fs "${DOTFILES_DIRECTORY}/shell/zshrc"        "${HOME}/.zshrc"
 ln -fs "${DOTFILES_DIRECTORY}/shell/tmux_conf"    "${HOME}/.tmux.conf"
 ln -fs "${DOTFILES_DIRECTORY}/git/gitattributes"  "${HOME}/.gitattributes"
