@@ -16,6 +16,7 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'autosuggestions' \
+  'completion' \
   'environment' \
   'terminal' \
   'editor' \
@@ -32,7 +33,6 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'terminal' \
   'utility' \
-  'completion' \
   'git' \
   'tmux' \
   'prompt'
