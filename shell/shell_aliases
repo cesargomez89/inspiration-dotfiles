@@ -48,7 +48,6 @@ function feature() {
   story_title=${story_title//[.,]/}
 
   git checkout -b feature/$story_title
-  git push --set-upstream origin feature/$story_title
 }
 
 function hotfix() {
@@ -57,7 +56,14 @@ function hotfix() {
   story_title=${story_title//[.,]/}
 
   git checkout -b hotfix/$story_title
-  git push --set-upstream origin hotfix/$story_title
+}
+
+function chore() {
+  story_title=$1
+  story_title=${story_title// /-}
+  story_title=${story_title//[.,]/}
+
+  git checkout -b chore/$story_title
 }
 
 function die() {
