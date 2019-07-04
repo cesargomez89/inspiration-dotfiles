@@ -17,6 +17,7 @@ zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:load' pmodule \
   'autosuggestions' \
   'completion' \
+  'docker' \
   'environment' \
   'terminal' \
   'editor' \
