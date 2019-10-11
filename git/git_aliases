@@ -15,7 +15,6 @@ alias gd="git diff --color"
 alias gg="git grep --color -n"
 alias ggi="git grep -ni"
 alias gk="gitk 2>/dev/null --all &"
-alias gx="gitx"
 
 alias g="git"
 #__git_complete g _git

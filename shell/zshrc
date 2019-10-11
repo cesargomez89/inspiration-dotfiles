@@ -15,3 +15,9 @@ if [[ -s "$HOME/.zshrc.local" ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+###-tns-completion-start-###
+if [ -f /Users/cesargomez/.tnsrc ]; then 
+    source /Users/cesargomez/.tnsrc 
+fi
+###-tns-completion-end-###
