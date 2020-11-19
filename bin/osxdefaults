@@ -48,8 +48,11 @@ defaults write com.apple.dock mru-spaces -bool false
 # Dock: enable the 2D Dock
 defaults write com.apple.dock no-glass -bool true
 
-# Dock: position the Dock on the bottom
-defaults write com.apple.dock orientation bottom
+# Dock: autohide Dock
+defaults write com.apple.dock autohide -bool true
+
+# Dock: position the Dock on the left
+defaults write com.apple.dock orientation left
 
 # Dock: set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 36
@@ -146,15 +149,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Disks: disable Time Machine prompts
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-# Disks: disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
-
-# Disks: disable disk image verification
-# defaults write com.apple.frameworks.diskimages skip-verify -bool true
-# defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-# defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
-
 
 # iTunes
 # ----------------------------------------------------------------------

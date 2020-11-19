@@ -21,3 +21,12 @@ if [ -f /Users/cesargomez/.tnsrc ]; then
     source /Users/cesargomez/.tnsrc 
 fi
 ###-tns-completion-end-###
+
+export NVM_DIR="/Users/cesar/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/12/bin/"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
