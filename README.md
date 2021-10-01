@@ -145,7 +145,7 @@ $ osxdefaults
 ### Custom shell prompt
 
 Iterm theme:
-[Monokai Soda](https://github.com/mbadolato/iTerm2-Color-Schemes#monokai-soda)
+[Monokai Soda Raw](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Monokai%20Soda.itermcolors)
 
 Font:
 [Inconsolata Powerline Nerd Font](/files/inconsolata_nerd_font_complete.otf)
