@@ -13,6 +13,12 @@ alias r='rails'
 alias v="nvim"
 alias vi='vim'
 
+# Quick access to aliases
+alias vsa='v $HOME/.dotfiles/shell/shell_aliases'
+alias ssa='source $HOME/.dotfiles/shell/shell_aliases'
+alias vga='v $HOME/.dotfiles/git/git_aliases'
+alias sga='source $HOME/.dotfiles/git/git_aliases'
+
 # https://git-fork.com
 alias fk="fork"
 

@@ -17,12 +17,12 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ###-tns-completion-start-###
-if [ -f /Users/cesargomez/.tnsrc ]; then 
-    source /Users/cesargomez/.tnsrc 
+if [ -f $HOME/.tnsrc ]; then
+    source $HOME/.tnsrc
 fi
 ###-tns-completion-end-###
 
-export NVM_DIR="/Users/cesar/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.

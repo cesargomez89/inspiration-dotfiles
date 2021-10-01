@@ -24,12 +24,11 @@ install_packages() {
             'zsh'
             'tmux' # I recommend to update the tmux version
             'the_silver_searcher'
-            '--HEAD universal-ctags/universal-ctags/universal-ctags'
-            'tree'
-	    '--HEAD neovim'
             'wget'
             'reattach-to-user-namespace'
             'shpotify'
+            '--HEAD neovim'
+            '--HEAD universal-ctags/universal-ctags/universal-ctags'
         )
 
         for index in ${!desired_formulae[*]}
