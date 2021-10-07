@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+# Returns the current playing song in Spotify for OSX
+
+if [[ -d ~/.rvm/ ]]; then
+  local ruby_version=$(~/.rvm/bin/rvm-prompt)
+  if [ -n "$ruby_version" ]; then
+    echo "$ruby_version"
+  fi
+else
+  echo ""
+fi
