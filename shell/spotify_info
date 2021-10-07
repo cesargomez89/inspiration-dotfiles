@@ -1,7 +1,9 @@
 #!/usr/bin/env zsh
 # Returns the current playing song in Spotify for OSX
-#
-artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
-album=`osascript -e 'tell application "Spotify" to album of current track as string'`;
-track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
-echo "      [ ${track} ]  ${artist}"
+
+no_spot=$(ps -ef | grep spotify.com | grep -v "grep" | awk '{print $2}')
+if $no_spot; then
+  echo ""
+else
+  echo "      [ `osascript -e 'tell application "Spotify" to name of current track as string'` ]  `osascript -e 'tell application "Spotify" to artist of current track as string'`"
+fi
