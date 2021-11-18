@@ -138,6 +138,8 @@ ln -fs "${DOTFILES_DIRECTORY}/shell/tmux_conf"    "${HOME}/.tmux.conf"
 ln -fs "${DOTFILES_DIRECTORY}/git/gitattributes"  "${HOME}/.gitattributes"
 ln -fs "${DOTFILES_DIRECTORY}/git/gitignore"      "${HOME}/.gitignore"
 
+git config --global core.excludesfile "${HOME}/.gitignore"
+
 # Ask before potentially overwriting OS X defaults
 seek_confirmation "Warning: This step may modify your OS X system defaults."
 

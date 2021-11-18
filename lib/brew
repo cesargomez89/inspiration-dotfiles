@@ -26,9 +26,9 @@ install_packages() {
             'the_silver_searcher'
             'wget'
             'reattach-to-user-namespace'
-            'shpotify'
+            'universal-ctags'
             '--HEAD neovim'
-            '--HEAD universal-ctags/universal-ctags/universal-ctags'
+            '--HEAD tree-sitter'
         )
 
         for index in ${!desired_formulae[*]}
