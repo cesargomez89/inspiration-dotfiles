@@ -5,6 +5,9 @@
 # Make vim the default editor
 export EDITOR="nvim"
 
+# Default finder for neovim fzf
+export FZF_DEFAULT_COMMAND="fd --type f"
+
 # Ignore duplicate commands in the history
 export HISTCONTROL=ignoredups
 

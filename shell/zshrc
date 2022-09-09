@@ -4,11 +4,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 export KEYTIMEOUT=1
-
-source $HOME/.dotfiles/shell/shell_exports # Shell Exports
-
 source $HOME/.dotfiles/git/git_aliases # Git Aliases
 source $HOME/.dotfiles/shell/shell_aliases # Shell Aliases
+source $HOME/.dotfiles/shell/shell_exports # Shell Exports
 
 if [[ -s "$HOME/.zshrc.local" ]]; then
   source $HOME/.zshrc.local # Customizations
@@ -26,7 +24,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/12/bin/"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"

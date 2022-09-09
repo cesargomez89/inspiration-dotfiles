@@ -2,6 +2,7 @@ set -g default-shell /bin/zsh
 set -s escape-time 0
 
 set-option -s status-interval 6
+if-shell "test -f ~/.vim/tmux-theme" "source ~/.vim/tmux-theme"
 
 # Screen like binding
 unbind C-b

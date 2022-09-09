@@ -19,5 +19,9 @@ Thumbs.db
 *.sw?
 *.vi
 tags
+tags.tmp
+tags.temp
+tags.lock
 package-lock.json
 .solargraph.yml
+.irb_history
