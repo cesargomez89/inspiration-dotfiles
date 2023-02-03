@@ -1,6 +1,6 @@
 DOTFILES_DIRECTORY="${HOME}/.dotfiles"
 DOTFILES_TARBALL_PATH="https://github.com/cesargomez89/inspiration-dotfiles/tarball/master"
-DOTFILES_GIT_REMOTE="git@github.com:cesargomez89/inspiration-dotfiles.git"
+DOTFILES_GIT_REMOTE="https://github.com/cesargomez89/inspiration-dotfiles.git"
 
 # If missing, download and extract the dotfiles repository
 if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
