@@ -18,6 +18,12 @@ For Mac OS
 I recommend to use Iterm2 nightly build
 https://www.iterm2.com/nightly/latest
 
+#### Prerequisites
+  - git
+  - zsh
+  - tmux
+  - neovim
+
 ## How to install
 
 Run
@@ -25,16 +31,18 @@ Run
 curl -L raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles | bash
 ```
 
-### Aafter Install
+### After Install
 
 The first time openning neovim you have to use: `:PlugInstall` to install all the plugins,
 then reopen nvim.
 
-In order to get the font icons working you have to install the respective nerd font. The current font is [Insconsolata Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Inconsolata/complete/Inconsolata%20Nerd%20Font%20Complete.otf).
+In order to get the font icons working you have to install the respective nerd font. The current font is [Insconsolata Nerd Font](https://github.com/ryanoasis/nerd-fonts).
 After install it, just set the font in your current terminal profile.
 
 The custom tmux binding is `C-a` (Ctrl + a).
-To get all the tmux plugins working run: `C-a U` and type `all` to update all the plugins.
+To get all the tmux plugins working run:
+`C-a I` install all the plugins.
+`C-a U` and type `all` to update all the plugins.
 
 Further information: [TPM](https://github.com/tmux-plugins/tpm)
 
@@ -70,7 +78,6 @@ $ dotfiles
   * 'tmux-plugins/tmux-continuum'
   * 'tmux-plugins/tmux-sessionist'
   * 'tmux-plugins/tmux-pain-control'
-* [Tmuxinator :goberserk:](https://github.com/tmuxinator/tmuxinator)
 * [Tmux Resurrect :skull:](https://github.com/tmux-plugins/tmux-resurrect)
 * [Shpotify :green_apple:](https://github.com/hnarayanan/shpotify)
 

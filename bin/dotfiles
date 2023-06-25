@@ -116,10 +116,6 @@ link() {
 e_header "Installing prezto..."
 run_prezto_install
 
-#Neovim
-e_header "Installing neovim dotfiles..."
-run_neovim_install
-
 # add tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
@@ -137,6 +133,10 @@ ln -fs "${DOTFILES_DIRECTORY}/shell/zshrc"        "${HOME}/.zshrc"
 ln -fs "${DOTFILES_DIRECTORY}/shell/tmux_conf"    "${HOME}/.tmux.conf"
 ln -fs "${DOTFILES_DIRECTORY}/git/gitattributes"  "${HOME}/.gitattributes"
 ln -fs "${DOTFILES_DIRECTORY}/git/gitignore"      "${HOME}/.gitignore"
+
+#Neovim
+e_header "Installing neovim dotfiles..."
+run_neovim_install
 
 git config --global core.excludesfile "${HOME}/.gitignore"
 

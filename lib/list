@@ -9,21 +9,20 @@ OS X dotfiles - Cesar Gomez - http://cesargomez.github.io/
 Additional software to install
 
 Browsers:
-    Firefox
-    Opera
+  Chrome
 
 Development:
-    Filezilla
-    Docker
-
-Gems:
-    tmuxinator
+  docker
+  git
+  zsh
+  tmux
+  the_silver_searcher
+  neovim
 
 Other:
-    Tiles
-    Slack
-    Telegram
-    Spotify
+  Slack
+  Telegram
+  Spotify
 EOT
 
 }

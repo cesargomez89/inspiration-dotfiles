@@ -1,10 +1,6 @@
 #!/bin/bash
 
 install_packages() {
-  sudo apt install git
-  sudo apt install zsh
-  sudo apt install tmux # I recommend to update the tmux version
-  sudo apt install the_silver_searcher
-  sudo apt install wget
-  sudo apt install neovim
+  print "recommended packages for debian based OS"
+  print "sudo apt install git zsh tmux the_silver_searcher neovim"
 }
