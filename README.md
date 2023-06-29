@@ -5,24 +5,27 @@ compatibility: Mac OS, Linux
 
 
 ### Requirements
+- MacOS Only
+
 The installation step requires the [XCode Command Line
-Tools](https://developer.apple.com/downloads) and may overwrite existing
-dotfiles in your HOME and `.dotfiles, .vim` directories.
+Tools](https://developer.apple.com/downloads)
 
-default shell zsh
-`chsh -s $(which zsh)`
-
-Ensure you have valid public key linked to your github account.
-
-For Mac OS
-I recommend to use Iterm2 nightly build
+I recommend to use iTerm2 nightly build
 https://www.iterm2.com/nightly/latest
 
-#### Prerequisites
+- General
   - git
   - zsh
   - tmux
   - neovim
+
+
+Ensure you have valid public key linked to your github account.
+
+Set zsh as default shell
+`chsh -s $(which zsh)`
+    
+This script may overwrite existing dotfiles in your HOME and `.dotfiles, .vim` directories.
 
 ## How to install
 
@@ -43,6 +46,10 @@ The custom tmux binding is `C-a` (Ctrl + a).
 To get all the tmux plugins working run:
 `C-a I` install all the plugins.
 `C-a U` and type `all` to update all the plugins.
+
+For NeoVim Coc extensions run:
+
+nvim +'CocInstall -sync coc-git coc-fzf-preview coc-solargraph coc-highlight' +qall
 
 Further information: [TPM](https://github.com/tmux-plugins/tpm)
 
