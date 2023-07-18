@@ -1,68 +1,65 @@
 #!/bin/bash
 
 install_packages() {
+    # List of libraries to install
+    local libraries=(
+        'git'
+        'coreutils'
+        'zsh'
+        'tmux'
+        'the_silver_searcher'
+        'wget'
+        'reattach-to-user-namespace'
+        'universal-ctags'
+        'neovim --HEAD'
+        'tree-sitter --HEAD'
+    )
 
-    # Check for Homebrew
-    if type_exists 'brew'; then
-        e_header "Updating Homebrew..."
-        # Use the latest version of Homebrew
-        brew update
-        [[ $? ]] && e_success "Done"
-
-        e_header "Updating any existing Homebrew formulae..."
-        ## Upgrade any already-installed formulae
-        #brew upgrade
-        [[ $? ]] && e_success "Done"
-
-				brew tap neovim/neovim
-
-        e_header "Checking status of desired Homebrew formulae..."
-        local list_formulae
-        local -a missing_formulae
-        local -a desired_formulae=(
-            'coreutils' # GNU core utilities (those that come with OS X are outdated)
-            'zsh'
-            'tmux' # I recommend to update the tmux version
-            'the_silver_searcher'
-            'wget'
-            'reattach-to-user-namespace'
-            'universal-ctags'
-            '--HEAD neovim'
-            '--HEAD tree-sitter'
-        )
-
-        for index in ${!desired_formulae[*]}
-        do
-            if  formula_exists ${desired_formulae[$index]}; then
-                # Store the name (and options) of every missing formula
-                missing_formulae=("${missing_formulae[@]}" "${desired_formulae[$index]}")
-            fi
-        done
-
-        if [[ "$missing_formulae" ]]; then
-            # Convert the array of missing formula into a list of space-separate strings
-            list_formulae=$( printf "%s " "${missing_formulae[@]}" )
-
-            e_header "Installing missing Homebrew formulae..."
-            # Install all missing formulae
-
-            e_header $list_formulae
-            brew install $list_formulae
-
-            [[ $? ]] && e_success "Done"
-        fi
-
-        # use latest rsync rather than out-dated OS X rsync
-        # install separately from the main formulae list to fix gh-19
-        brew install rsync
-
-        # Remove outdated versions from the Cellar
-        brew cleanup
-    else
-        printf "\n"
-        e_error "Error: Homebrew not found."
-        printf "Aborting...\n"
-        exit
+    # Install Homebrew (if not already installed)
+    if ! command -v brew >/dev/null 2>&1; then
+        echo "Homebrew not found. Installing Homebrew..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   	(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/temp/.zprofile
+    	eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
 
+    # Update Homebrew and formulae
+    echo "Updating Homebrew..."
+    brew update
+
+    # Install libraries using Homebrew
+    local not_found=()
+    local already_installed=()
+    local newly_installed=()
+    for library in "${libraries[@]}"; do
+        echo "Installing $library..."
+        if brew list --formula | cut -d ' ' -f 1 | grep -q "^${library%% --*}\$"; then
+            already_installed+=("${library%%--*}")
+        elif ! brew install $library; then
+            not_found+=("$library")
+        else
+            newly_installed+=("${library%%--*}")
+        fi
+    done
+
+    # Display libraries not found
+    if [ ${#not_found[@]} -gt 0 ]; then
+        echo -e "\n\n"
+        echo -e "\033[1mThe following libraries were not found:\033[0m"
+        printf '\033[0;31m%s\n\033[0m' "${not_found[@]}"
+        echo -e "\n\n"
+    fi
+
+    if [ ${#already_installed[@]} -gt 0 ]; then
+        echo -e "\033[1mAlready installed libraries:\033[0m"
+        printf '\033[0;33m%s\n\033[0m' "${already_installed[@]}"
+        echo -e "\n\n"
+    fi
+
+    # List newly installed libraries from the script
+    if [ ${#newly_installed[@]} -gt 0 ]; then
+        echo -e "\033[1mNewly installed libraries:\033[0m"
+        printf '\033[0;32m%s\n\033[0m' "${newly_installed[@]}"
+        echo -e "\n\n"
+    fi
 }

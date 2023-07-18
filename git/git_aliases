@@ -16,7 +16,8 @@ alias gg="git grep --color -n"
 alias ggi="git grep -ni"
 alias gk="gitk 2>/dev/null --all &"
 alias gfo='git fetch origin -p'
-alias gpo='rubocop && gp'
+alias gpo='gp origin HEAD'
+alias gwip='ga . && git commit -m "WIP" && gpo'
 
 alias g="git"
 #__git_complete g _git
