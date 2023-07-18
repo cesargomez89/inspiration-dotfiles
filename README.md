@@ -7,13 +7,12 @@ compatibility: Mac OS, Linux
 ### Requirements
 - MacOS Only
 
-The installation step requires the [XCode Command Line
+  - The installation step requires the [XCode Command Line
 Tools](https://developer.apple.com/downloads)
-
-I recommend to use iTerm2 nightly build
+  - I recommend to use iTerm2 nightly build
 https://www.iterm2.com/nightly/latest
 
-- General
+- Linux
   - git
   - zsh
   - tmux
@@ -24,7 +23,7 @@ Ensure you have valid public key linked to your github account.
 
 Set zsh as default shell
 `chsh -s $(which zsh)`
-    
+
 This script may overwrite existing dotfiles in your HOME and `.dotfiles, .vim` directories.
 
 ## How to install
@@ -36,7 +35,7 @@ curl -L raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles | b
 
 ### After Install
 
-The first time openning neovim you have to use: `:PlugInstall` to install all the plugins,
+The first time openning neovim you have to use: `, + pi` to install all the plugins,
 then reopen nvim.
 
 In order to get the font icons working you have to install the respective nerd font. The current font is [Insconsolata Nerd Font](https://github.com/ryanoasis/nerd-fonts).
