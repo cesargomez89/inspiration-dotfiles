@@ -38,9 +38,6 @@ curl -L raw.github.com/cesargomez89/inspiration-dotfiles/master/bin/dotfiles | b
 The first time openning neovim you have to use: `, + pi` to install all the plugins,
 then reopen nvim.
 
-In order to get the font icons working you have to install the respective nerd font. The current font is [Insconsolata Nerd Font](https://github.com/ryanoasis/nerd-fonts).
-After install it, just set the font in your current terminal profile.
-
 The custom tmux binding is `C-a` (Ctrl + a).
 To get all the tmux plugins working run:
 `C-a I` install all the plugins.
@@ -156,6 +153,8 @@ $ osxdefaults
 ```
 
 ### Custom shell prompt
+
+Next Font and iTerm theme should be downloaded on your $HOME directory.
 
 Iterm theme:
 [Monokai Soda Raw](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Monokai%20Soda.itermcolors)
