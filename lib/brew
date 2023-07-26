@@ -4,6 +4,7 @@ install_packages() {
     # List of libraries to install
     local libraries=(
         'git'
+        'fzf'
         'coreutils'
         'zsh'
         'tmux'
@@ -41,6 +42,10 @@ install_packages() {
             newly_installed+=("${library%%--*}")
         fi
     done
+
+    if brew list --formula | cut -d ' ' -f 1 | grep -q "^fzf\$"; then
+        $(brew --prefix)/opt/fzf/install
+    fi
 
     # Display libraries not found
     if [ ${#not_found[@]} -gt 0 ]; then

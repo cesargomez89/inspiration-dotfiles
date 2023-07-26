@@ -22,6 +22,7 @@ source ./lib/utils
 source ./lib/npm
 source ./lib/neovim
 source ./lib/prezto
+source ./lib/download_files
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     run_help
@@ -151,3 +152,5 @@ else
 fi
 
 run_list
+
+run_download_and_open_files

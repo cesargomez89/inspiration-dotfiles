@@ -1,0 +1,28 @@
+#!/bin/bash
+
+run_download_and_open_files() {
+    # Function to download a file from a given URL
+    download_file() {
+        local url=$1
+        local filename=$(basename "$url")
+        echo "Downloading $filename..."
+        curl -o "$HOME/$filename" -L "$url"
+    }
+
+    # URLs of the files to download
+    iterm_colors_url="https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Monokai%20Soda.itermcolors"
+    nerd_font_url="https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Inconsolata/InconsolataNerdFont-Regular.ttf?raw=true"
+
+    # Download the files
+    download_file "$iterm_colors_url"
+    download_file "$nerd_font_url"
+
+    # Open the folder containing the downloaded files
+    if command -v xdg-open >/dev/null 2>&1; then
+        xdg-open "$HOME"
+    elif command -v open >/dev/null 2>&1; then
+        open "$HOME"
+    else
+        echo "Unable to open the $HOME directory automatically. Please navigate to it manually."
+    fi
+}
