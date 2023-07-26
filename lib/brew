@@ -4,6 +4,7 @@ install_packages() {
     # List of libraries to install
     local libraries=(
         'git'
+        'fzf'
         'coreutils'
         'zsh'
         'tmux'
